@@ -20,7 +20,10 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Header.h">
+    <ClInclude Include="Arithmetic.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="DefaultSettings.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
   </ItemGroup>

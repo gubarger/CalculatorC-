@@ -2,9 +2,7 @@ name: Telegram Notification
 
 on:
   push:
-    branches: [ "main" ]  # trigger
-  pull_request:
-    branches: [ "main" ]
+    branches: [ "master" ]
 
 jobs:
   notify:
@@ -14,10 +12,9 @@ jobs:
         uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_CHAT_ID }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
+          token: ${{ secrets.TELEGRAM_TOKEN_BOT }}
           message: |
-            📢 Новые изменения в ${{ github.repository }}!
+            📢 Новый коммит в ${{ github.repository }}!
             👤 Автор: ${{ github.actor }}
-            🌿 Ветка: ${{ github.ref }}
-            📝 Коммит: ${{ github.event.head_commit.message }}
+            📝 Сообщение: ${{ github.event.head_commit.message }}
             🔗 Ссылка: ${{ github.event.head_commit.url }}

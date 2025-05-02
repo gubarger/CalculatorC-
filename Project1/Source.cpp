@@ -1,11 +1,12 @@
 #include <iostream>
 #include <math.h>
 
-#include "Header.h"
+#include "Arithmetic.h"
+#include "DefaultSettings.h"
 
 using namespace std;
 
 int main() {
-	Arithmetic<double, double, string, double> number{ 0, 0 };
+	Arithmetic<double, double, int, int> number{ 0, 0, 0, 0 };
 	number.Inputing();
 }

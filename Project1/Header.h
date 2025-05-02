@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-template<typename T, typename T2, typename I, typename R>
+template<typename T, typename T2, typename I>
 class Arithmetic
 {
 public:
@@ -13,9 +13,6 @@ public:
 
 	/* input comand */
 	I input_operation;
-
-	/* result */
-	R result;
 
 	/* default outlog */
 	string OutlogMain = "Nothuing result";

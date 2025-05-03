@@ -25,26 +25,48 @@ public:
 		std::cout << "Input operation: ";
 		std::cin >> settings.input_operation;
 
-		std::cout << "Input number one: ";
+        switch (settings.input_operation)
+        {
+        case '%':
+            Mod();
+            return -1;
+            break;
+        case '^':
+            std::cout << "The first number is the number that we are building" << " - " << "The second number is the power of the number being raised!" << std::endl;
+            break;
+        case 'h':
+            Help();
+            return -1;
+            break;
+        }
+        
+		std::cout << "Input number one(double): ";
 		std::cin >> settings.num_1;
 
-		std::cout << "Input number two: ";
+		std::cout << "Input number two(double): ";
 		std::cin >> settings.num_2;
 
 		double result;
 
 		// Basic arithmetic operations //
-		if (settings.input_operation == "+") { Sum(); }
-		else if (settings.input_operation == "-") { Deduction(); }
-		else if (settings.input_operation == "/") { Division(); }
-		else if (settings.input_operation == "*") { Multiplication(); }
-		else if (settings.input_operation == "mod") { Mod(); }
-		else
-		{
-			system("cls");
-			std::cout << settings.OutlogMain << std::endl;
-			return -1;
-		}
+        switch (settings.input_operation)
+        {
+        case '+':
+            Sum();
+            break;
+        case '-':
+            Deduction();
+            break;
+        case '/':
+            Division();
+            break;
+        case '*':
+            Multiplication();
+            break;
+        case '^':
+            Exponentiation();
+            break;
+        }
 	}
 
 	// Basic arithmetic operations //
@@ -57,6 +79,7 @@ public:
 		return -1;
 	}
 	auto Division() {
+        std::cout << settings.num_1 / settings.num_2 << std::endl;
 		if (settings.num_2 == 0) {
 			system("cls");
 			std::cout << settings.OutlogMain;
@@ -72,13 +95,21 @@ public:
 
 		system("cls");
 
-		std::cout << "Write an integer one: ";
+		std::cout << "Input number one(int): ";
 		std::cin >> settings.num_int_1;
 
-		std::cout << "Write an integer two: ";
+		std::cout << "Input number two(int): ";
 		std::cin >> settings.num_int_2;
 
 		std::cout << settings.num_int_1 % settings.num_int_2 << std::endl;
 		return -1;
 	}
+    auto Exponentiation() {
+        std::cout << pow(settings.num_1, settings.num_2) << std::endl;
+        return -1;
+    }
+    void Help() {
+        system("cls");
+        std::cout << "Arithmetic operations: +(sum), - (deduction), / (division), * (multiply), % (mod), ^ (exponentiation)" << std::endl;
+    }
 };

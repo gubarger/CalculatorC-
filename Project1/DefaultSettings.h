@@ -12,7 +12,7 @@ struct DefaultSettingsStruct
 	T4 num_int_2;
 
 	/* input comand */
-	std::string input_operation;
+    char input_operation;
 
 	/* default outlog */
 	std::string OutlogMain = "Nothuing result";
